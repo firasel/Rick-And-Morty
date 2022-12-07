@@ -15,3 +15,93 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: "TTTravelsBlack";
+  src: url("./assets/fonts/TTTravels-Black.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsBlackItalic";
+  src: url("./assets/fonts/TTTravels-BlackItalic.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsBold";
+  src: url("./assets/fonts/TTTravels-Bold.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsBoldItalic";
+  src: url("./assets/fonts/TTTravels-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsDemiBold";
+  src: url("./assets/fonts/TTTravels-DemiBold.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsDemiBoldItalic";
+  src: url("./assets/fonts/TTTravels-DemiBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsExtraBold";
+  src: url("./assets/fonts/TTTravels-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsExtraBoldItalic";
+  src: url("./assets/fonts/TTTravels-ExtraBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsExtraLight";
+  src: url("./assets/fonts/TTTravels-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsExtraLightItalic";
+  src: url("./assets/fonts/TTTravels-ExtraLightItalic.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsItalic";
+  src: url("./assets/fonts/TTTravels-Italic.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsLight";
+  src: url("./assets/fonts/TTTravels-Light.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsLightItalic";
+  src: url("./assets/fonts/TTTravels-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsMedium";
+  src: url("./assets/fonts/TTTravels-Medium.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsMediumItalic";
+  src: url("./assets/fonts/TTTravels-MediumItalic.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsRegular";
+  src: url("./assets/fonts/TTTravels-Regular.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsThin";
+  src: url("./assets/fonts/TTTravels-Thin.ttf");
+}
+
+@font-face {
+  font-family: "TTTravelsThinItalic";
+  src: url("./assets/fonts/TTTravels-ThinItalic.ttf");
+}
