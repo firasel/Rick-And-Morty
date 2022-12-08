@@ -4,11 +4,10 @@ import gunImg from "../../assets/images/Gun.png";
 import pillImg from "../../assets/images/pill.png";
 import playSvg from "../../assets/images/play.svg";
 import portalImg from "../../assets/images/portal.png";
-import MeetTheCast from "../MeetTheCast/MeetTheCast";
 
 const Hero = () => {
   return (
-    <div className="my-36">
+    <div className="mt-24 mb-20">
       <div className="mb-10">
         <h1 className="max-w-fit mx-auto text-[40px] md:text-9xl font-TTTravelsExtraBold text-transparent bg-clip-text bg-gradient-to-r from-customGreen to-customBlue relative">
           <img
@@ -33,7 +32,7 @@ const Hero = () => {
           />
         </h1>
       </div>
-      <div className="max-w-fit flex items-center gap-16 mx-auto mb-20">
+      <div className="max-w-fit flex items-center gap-16 mx-auto">
         <button className="flex items-center gap-2 bg-gradient-to-r from-customGreen to-customBlue text-white p-4 rounded-full font-TTTravelsDemiBold text-xs md:text-xl">
           <img className="w-6" src={playSvg} alt="play icon" /> Watch Now
         </button>
@@ -43,7 +42,6 @@ const Hero = () => {
           dimensions.
         </p>
       </div>
-      <MeetTheCast />
     </div>
   );
 };
