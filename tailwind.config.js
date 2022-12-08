@@ -13,6 +13,7 @@ module.exports = {
         customBlue: "#14D9E5",
       },
       fontFamily: {
+        Poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
         TTTravelsBlack: ["TTTravelsBlack", ...defaultTheme.fontFamily.sans],
         TTTravelsBlackItalic: ["TTTravelsBlackItalic", ...defaultTheme.fontFamily.sans],
         TTTravelsBold: ["TTTravelsBold", ...defaultTheme.fontFamily.sans],
@@ -31,6 +32,16 @@ module.exports = {
         TTTravelsRegular: ["TTTravelsRegular", ...defaultTheme.fontFamily.sans],
         TTTravelsThin: ["TTTravelsThin", ...defaultTheme.fontFamily.sans],
         TTTravelsThinItalic: ["TTTravelsThinItalic", ...defaultTheme.fontFamily.sans],
+      },
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+        sm: "2rem",
+        lg: "3rem",
+        xl: "4rem",
+        "2xl": "4rem",
       },
     },
   },

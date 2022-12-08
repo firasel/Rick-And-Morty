@@ -4,6 +4,7 @@ import gunImg from "../../assets/images/Gun.png";
 import pillImg from "../../assets/images/pill.png";
 import playSvg from "../../assets/images/play.svg";
 import portalImg from "../../assets/images/portal.png";
+import MeetTheCast from "../MeetTheCast/MeetTheCast";
 
 const Hero = () => {
   return (
@@ -24,11 +25,7 @@ const Hero = () => {
           </div>
           MORTY{" "}
           <span className="font-TTTravelsBoldItalic text-white">WIKI</span>
-          <img
-            className="absolute top-4 -right-3"
-            src={pillImg}
-            alt="gun"
-          />
+          <img className="absolute top-4 -right-3" src={pillImg} alt="gun" />
           <img
             className="absolute -bottom-40 -right-80"
             src={gunImg}
@@ -36,7 +33,7 @@ const Hero = () => {
           />
         </h1>
       </div>
-      <div className="max-w-fit flex items-center gap-16 mx-auto mb-10">
+      <div className="max-w-fit flex items-center gap-16 mx-auto mb-20">
         <button className="flex items-center gap-2 bg-gradient-to-r from-customGreen to-customBlue text-white p-4 rounded-full font-TTTravelsDemiBold text-xs md:text-xl">
           <img className="w-6" src={playSvg} alt="play icon" /> Watch Now
         </button>
@@ -46,6 +43,7 @@ const Hero = () => {
           dimensions.
         </p>
       </div>
+      <MeetTheCast />
     </div>
   );
 };
