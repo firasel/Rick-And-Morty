@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { Link } from "react-router-dom";
 import getCharacters from "../../api/getCharacters";
 import Carousel from "../Carousel/Carousel";
 import Character from "../Character/Character";
@@ -16,9 +17,11 @@ const MeetTheCast = () => {
         <h1 className="font-TTTravelsMedium text-base md:text-2xl">
           Meet The Cast
         </h1>
-        <button className="font-TTTravelsRegular text-lg border border-customGreen rounded-lg py-2 px-6">
-          View All
-        </button>
+        <Link to="/cast">
+          <button className="font-TTTravelsRegular text-lg border border-customGreen rounded-lg py-2 px-6">
+            View All
+          </button>
+        </Link>
       </div>
       <Carousel>
         {data?.results?.map((characterData, i) => (
