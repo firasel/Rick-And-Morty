@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import nextImg from "../../assets/images/next.png";
 
-const SampleNextArrow = (props) => {
+const NextArrow = (props) => {
   const { className, style, onClick } = props;
   if (className?.includes("slick-disabled")) return null;
   return (
@@ -16,7 +16,7 @@ const SampleNextArrow = (props) => {
   );
 };
 
-const SamplePrevArrow = (props) => {
+const PrevArrow = (props) => {
   const { className, style, onClick } = props;
   if (className?.includes("slick-disabled")) return null;
   return (
@@ -38,8 +38,8 @@ const Carousel = ({ children }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return <Slider {...settings}>{children}</Slider>;

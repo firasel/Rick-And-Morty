@@ -13,19 +13,19 @@ const MeetTheCast = () => {
 
   return (
     <div className="container mx-auto overflow-hidden">
-      <div className="flex items-center justify-between text-white mb-6">
+      <div className="flex items-center justify-between text-white mb-4 md:mb-6">
         <h1 className="font-TTTravelsMedium text-base md:text-2xl">
           Meet The Cast
         </h1>
         <Link to="/cast">
-          <button className="font-TTTravelsRegular text-lg border border-customGreen rounded-lg py-2 px-6">
+          <button className="font-TTTravelsRegular text-xs md:text-lg border border-customGreen rounded-lg py-1 md:py-2 px-3 md:px-6">
             View All
           </button>
         </Link>
       </div>
       <Carousel>
         {data?.results?.map((characterData, i) => (
-          <Character key={i} characterData={characterData} />
+          <Character key={i} homeActive={true} characterData={characterData} />
         ))}
       </Carousel>
     </div>

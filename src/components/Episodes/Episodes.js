@@ -11,8 +11,8 @@ const Episodes = () => {
   );
 
   return (
-    <div className="container mx-auto overflow-hidden my-28">
-      <div className="flex items-center justify-between text-white mb-8">
+    <div className="container mx-auto overflow-hidden my-8 md:my-28">
+      <div className="flex items-center justify-between text-white mb-5 md:mb-8">
         <h1 className="font-TTTravelsMedium text-base md:text-2xl">Episodes</h1>
       </div>
       <Carousel>

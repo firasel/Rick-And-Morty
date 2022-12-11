@@ -11,8 +11,8 @@ const Locations = () => {
   );
 
   return (
-    <div className="container mx-auto overflow-hidden mb-20">
-      <div className="flex items-center justify-between text-white mb-8">
+    <div className="container mx-auto overflow-hidden mb-11 md:mb-20">
+      <div className="flex items-center justify-between text-white mb-5 md:mb-8">
         <h1 className="font-TTTravelsMedium text-base md:text-2xl">
           Locations
         </h1>
