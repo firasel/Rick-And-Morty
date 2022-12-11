@@ -3,6 +3,7 @@ import React from "react";
 import getEpisodes from "../../api/getEpisodes";
 import Carousel from "../Carousel/Carousel";
 import Episode from "../Episode/Episode";
+import EpisodeLocationSkeleton from "../LoadingUi/EpisodeLocationSkeleton";
 
 const Episodes = () => {
   const { data, error, isError, isLoading } = useQuery(
@@ -16,9 +17,15 @@ const Episodes = () => {
         <h1 className="font-TTTravelsMedium text-base md:text-2xl">Episodes</h1>
       </div>
       <Carousel>
-        {data?.results?.map((episodeData, i) => (
-          <Episode key={i} episodeData={episodeData} />
-        ))}
+        {isLoading &&
+          Array(6)
+            .fill(0)
+            .map((_, i) => <EpisodeLocationSkeleton key={i} />)}
+        {!isLoading &&
+          !isError &&
+          data?.results?.map((episodeData, i) => (
+            <Episode key={i} episodeData={episodeData} />
+          ))}
       </Carousel>
     </div>
   );

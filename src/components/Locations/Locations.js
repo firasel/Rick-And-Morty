@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import getLocations from "../../api/getLocations";
 import Carousel from "../Carousel/Carousel";
+import EpisodeLocationSkeleton from "../LoadingUi/EpisodeLocationSkeleton";
 import Location from "../Location/Location";
 
 const Locations = () => {
@@ -18,9 +19,14 @@ const Locations = () => {
         </h1>
       </div>
       <Carousel>
-        {data?.results?.map((locationData, i) => (
-          <Location key={i} locationData={locationData} />
-        ))}
+        {isLoading &&
+          Array(6)
+            .fill(0)
+            .map((_, i) => <EpisodeLocationSkeleton key={i} />)}
+        {!isLoading && !isError &&
+          data?.results?.map((locationData, i) => (
+            <Location key={i} locationData={locationData} />
+          ))}
       </Carousel>
     </div>
   );

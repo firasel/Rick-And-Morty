@@ -9,14 +9,18 @@ const Hero = () => {
   return (
     <div className="md:mt-24 mb-12 md:mb-20 container">
       <div className="mb-4 md:mb-10">
-        <h1 className="md:max-w-fit mx-auto text-2xl sm:text-[40px] md:text-7xl lg:text-8xl xl:text-9xl font-TTTravelsExtraBold text-transparent bg-clip-text bg-gradient-to-r from-customGreen to-customBlue relative">
-          <img className="absolute w-16 sm:w-20 md:w-auto -top-5 sm:-top-0.5 md:-top-32 lg:-top-36 xl:-top-28 -left-8 sm:-left-10 md:-left-44 lg:-left-40" src={bubbleImg} alt="bubble" />
+        <h1 className="md:max-w-fit mx-auto text-[40px] md:text-7xl lg:text-8xl xl:text-9xl font-TTTravelsExtraBold text-transparent bg-clip-text bg-gradient-to-r from-customGreen to-customBlue relative">
+          <img
+            className="absolute w-20 md:w-auto -top-7 md:-top-32 lg:-top-36 xl:-top-28 -left-10 md:-left-44 lg:-left-40"
+            src={bubbleImg}
+            alt="bubble"
+          />
           <div className="flex items-end whitespace-nowrap">
             <span className="font-TTTravelsExtraBoldItalic text-white">
               The
             </span>
             <img
-              className="w-16 sm:w-32 md:w-48 lg:w-52 xl:w-auto px-2 md:px-8 pb-2 md:pb-3 xl:pb-5"
+              className="w-16 sm:w-32 md:w-48 lg:w-52 xl:w-auto px-2 md:px-8 pb-4 md:pb-3 xl:pb-5"
               src={portalImg}
               alt="portal"
             />
@@ -42,9 +46,12 @@ const Hero = () => {
           grandson, Morty, for wild escapades in other worlds and alternate
           dimensions.
         </p>
-        <button className="flex items-center gap-2 bg-gradient-to-r from-customGreen to-customBlue text-white px-4 py-3 md:p-4 rounded-full font-TTTravelsDemiBold text-xs md:text-xl">
-          <img className="w-4 md:w-6" src={playSvg} alt="play icon" /> Watch Now
-        </button>
+        <a href="https://youtu.be/KQ9Cgdsa9tc">
+          <button className="flex items-center gap-2 bg-gradient-to-r from-customGreen to-customBlue text-white px-4 py-3 md:p-4 rounded-full font-TTTravelsDemiBold text-xs md:text-xl">
+            <img className="w-4 md:w-6" src={playSvg} alt="play icon" /> Watch
+            Now
+          </button>
+        </a>
       </div>
     </div>
   );

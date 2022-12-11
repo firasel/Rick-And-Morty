@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import getCharacters from "../../api/getCharacters";
 import Carousel from "../Carousel/Carousel";
 import Character from "../Character/Character";
+import CharacterSkeleton from "../LoadingUi/CharacterSkeleton";
 
 const MeetTheCast = () => {
   const { data, error, isError, isLoading } = useQuery(
@@ -24,7 +25,8 @@ const MeetTheCast = () => {
         </Link>
       </div>
       <Carousel>
-        {data?.results?.map((characterData, i) => (
+        {isLoading && Array(6).fill(0).map((_, i) => <CharacterSkeleton homeActive={true} key={i} />)}
+        {!isLoading && !isError && data?.results?.map((characterData, i) => (
           <Character key={i} homeActive={true} characterData={characterData} />
         ))}
       </Carousel>

@@ -6,6 +6,7 @@ import arrowColored from "../../assets/images/arrowColored.svg";
 import searchImg from "../../assets/images/search.png";
 import selectArrow from "../../assets/images/selectArrow.png";
 import Character from "../Character/Character";
+import CharacterSkeleton from "../LoadingUi/CharacterSkeleton";
 import "./AllCast.scss";
 
 const AllCast = () => {
@@ -44,6 +45,7 @@ const AllCast = () => {
               <div className="bg-customBlue font-TTTravelsDemiBold text-xs md:text-base text-white absolute top-[100%] z-10 rounded-lg overflow-hidden mt-2">
                 {options?.map((name, i) => (
                   <div
+                    key={i}
                     onClick={() => setSelect(name)}
                     className="px-5 cursor-pointer hover:bg-customBlack/10"
                   >
@@ -70,9 +72,14 @@ const AllCast = () => {
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-9 xl:gap-10 py-10">
-        {data?.results?.map((characterData, i) => (
-          <Character key={i} characterData={characterData} />
-        ))}
+        {isLoading &&
+          Array(10)
+            .fill(0)
+            .map((_, i) => <CharacterSkeleton key={i}/>)}
+        {!isLoading && !isError &&
+          data?.results?.map((characterData, i) => (
+            <Character key={i} characterData={characterData} />
+          ))}
       </div>
       {/* Pagination start */}
       <div className="flex items-center justify-center gap-3 text-white pb-6 md:pb-10 font-Poppins font-medium text-xs md:text-xl">
