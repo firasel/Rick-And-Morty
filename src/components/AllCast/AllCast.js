@@ -15,10 +15,9 @@ const AllCast = () => {
   const [selectShow, setSelectShow] = useState(false);
 
   const { data, error, isError, isLoading } = useQuery(
-    ["AllCharacters", page],
+    ["AllCharacters", { type: "filter", page }],
     getCharacters
   );
-  console.log(data);
 
   return (
     <div className="container">
@@ -27,9 +26,16 @@ const AllCast = () => {
           The Cast
         </h2>
         <div className="flex items-center searchBox relative">
-          <div onClick={()=>setSelectShow(prevVal=>!prevVal)} className="rounded-l-full font-TTTravelsDemiBold text-base bg-customBlue text-white px-3 py-2 selectDiv cursor-pointer">
+          <div
+            onClick={() => setSelectShow((prevVal) => !prevVal)}
+            className="rounded-l-full font-TTTravelsDemiBold text-base bg-customBlue text-white px-3 py-2 selectDiv cursor-pointer"
+          >
             {select}
-            <img className={`${!selectShow && "rotate-180"}`} src={selectArrow} alt="arrow" />
+            <img
+              className={`${!selectShow && "rotate-180"}`}
+              src={selectArrow}
+              alt="arrow"
+            />
           </div>
 
           {selectShow && (

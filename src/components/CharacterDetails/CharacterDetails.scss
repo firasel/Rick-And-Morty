@@ -1,0 +1,27 @@
+.titleStyle {
+  background: -webkit-linear-gradient(
+    -60deg,
+    rgb(20 217 229 / 70%) 40%,
+    rgb(157 254 0 / 70%) 72%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 2px transparent;
+  color: #232d2d;
+  opacity: 0.1;
+}
+
+.listItem {
+  &::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: absolute;
+    left: 0;
+  }
+}

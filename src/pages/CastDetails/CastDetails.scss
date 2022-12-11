@@ -1,0 +1,32 @@
+.CastDetailsBgStyle {
+  background-image: url("../../assets/images/CastDetailsBackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  &::after {
+    content: "";
+    width: 20rem;
+    height: 20rem;
+    background-color: #2a3e84;
+    filter: blur(120px);
+    position: fixed;
+    top: 10%;
+    right: -8rem;
+    border-radius: 50%;
+    -webkit-filter: blur(120px);
+    z-index: 0;
+  }
+  &::before {
+    content: "";
+    width: 20rem;
+    height: 20rem;
+    background-color: #2a3e84;
+    filter: blur(120px);
+    position: fixed;
+    top: 90%;
+    left: -8rem;
+    border-radius: 50%;
+    -webkit-filter: blur(120px);
+    z-index: 0;
+  }
+}
