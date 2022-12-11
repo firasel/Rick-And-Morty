@@ -1,8 +1,4 @@
 .CastDetailsBgStyle {
-  background-image: url("../../assets/images/CastDetailsBackground.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
   &::after {
     content: "";
     width: 20rem;

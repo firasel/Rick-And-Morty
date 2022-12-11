@@ -1,8 +1,4 @@
 .castBgStyle {
-  background-image: url("../../assets/images/CastBackground.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
   &::after {
     content: "";
     width: 20rem;
