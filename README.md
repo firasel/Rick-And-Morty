@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="./src/assets/images/Logo.png" alt="screenshot" />
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About the Project
 
-## Available Scripts
+### Summary
 
-In the project directory, you can run:
+A single-page web app built using React.js that uses [The Rick and Morty API](https://rickandmortyapi.com/) to display characters, episodes, and locations from the TV series.
 
-### `yarn start`
+### Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<div align="center">
+  <a href="https://rick-andmorty.vercel.app/">
+    <img src="https://i.ibb.co/RT2Vz1S/rick-and-morty.png" alt="screenshot" />
+  </a>
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Tech Stack
 
-### `yarn test`
+- [React.js](https://reactjs.org/)
+- [React-router-dom](https://reactrouter.com/en/main)
+- [Slick-carousel](http://kenwheeler.github.io/slick/)
+- [Framer-motion](https://www.framer.com/motion)
+- [Axios](https://axios-http.com/docs/intro)
+- [React-query](https://tanstack.com/query/v4/)
+- [TailwindCSS](https://tailwindcss.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Features
 
-### `yarn build`
+- Easy to understand project structure
+- Written in modern React, only functional components with hooks
+- Using React-query for caching data on the client side
+- In search options using the debounce function to reduce API requests
+- Responsive and animated web page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project uses Yarn as package manager
 
-### `yarn eject`
+```bash
+ npm install --global yarn
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Run Locally
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone the project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+  git clone https://github.com/firasel/Rick-And-Morty.git
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Go to the project directory
 
-## Learn More
+```bash
+  cd Rick-And-Morty
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Install dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  yarn install
+```
 
-### Code Splitting
+Start the server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+  yarn start
+```
 
-### Analyzing the Bundle Size
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[@firasel](https://github.com/firasel)
