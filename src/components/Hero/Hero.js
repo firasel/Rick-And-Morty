@@ -50,12 +50,13 @@ const Hero = () => {
           />
           <motion.img
             animate={{
-              rotate: [-3, 20, -3],
+              rotate: [-3, 25, -3],
+              opacity: [0.8, 1, 0.8],
               transition: {
                 x: 50,
                 repeat: Infinity,
                 repeatDelay: 0.1,
-                duration: 8,
+                duration: 20,
               },
             }}
             className="w-52 md:w-auto absolute -bottom-32 md:-bottom-40 -right-28 md:-right-80 z-0"
