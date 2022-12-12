@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useCallback, useRef, useState } from "react";
 import getCharacters from "../../api/getCharacters";
 import getEpisodes from "../../api/getEpisodes";
@@ -85,25 +86,43 @@ const AllCast = () => {
                 alt="arrow"
               />
             </div>
-            {selectShow && (
-              <div className="bg-customBlue font-TTTravelsDemiBold text-xs md:text-base text-white absolute top-[100%] z-10 rounded-lg overflow-hidden mt-2">
-                {options?.map((name, i) => (
-                  <div
-                    key={i}
-                    onClick={() => selectHandler(name)}
-                    className="px-5 cursor-pointer hover:bg-customBlack/10"
-                  >
-                    {i > 0 && <hr />}
-                    <p
+            <AnimatePresence>
+              {selectShow && (
+                <motion.div
+                  initial={{ scaleY: 0, originY: 0, opacity: 0 }}
+                  animate={{
+                    scaleY: 1,
+                    originY: 0,
+                    opacity: 1,
+                    transition: { delay: 0.1 },
+                  }}
+                  exit={{ scaleY: 0, originY: 0, opacity: 0 }}
+                  className="bg-customBlue font-TTTravelsDemiBold text-xs md:text-base text-white absolute top-[100%] z-10 rounded-lg overflow-hidden mt-2"
+                >
+                  {options?.map((name, i) => (
+                    <motion.div
+                      initial={{ y: 50, opacity: 0 }}
+                      animate={{
+                        y: 0,
+                        opacity: 1,
+                        transition: { delay: (i*0.1)+0.2 },
+                      }}
                       key={i}
-                      className="py-2 text-center optionBorder select-none"
+                      onClick={() => selectHandler(name)}
+                      className="px-5 cursor-pointer hover:bg-customBlack/10"
                     >
-                      {name}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )}
+                      {i > 0 && <hr />}
+                      <p
+                        key={i}
+                        className="py-2 text-center optionBorder select-none"
+                      >
+                        {name}
+                      </p>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
             <div className="inputBox rounded-r-full">
               <button className="pl-2 pr-1 py-[10px] md:py-3 bg-white/5">
                 <img src={searchImg} alt="icon" />
@@ -144,12 +163,45 @@ const AllCast = () => {
           !isError &&
           data?.results?.map((cardData, i) => {
             if (select === options[0]) {
-              return <Character key={i} characterData={cardData} />;
+              return (
+                <motion.div
+                  initial={{ y: -50, opacity: 0 }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                    transition: { delay: (i % 5) * 0.1 },
+                  }}
+                >
+                  <Character characterData={cardData} />
+                </motion.div>
+              );
             }
             if (select === options[1]) {
-              return <Location key={i} locationData={cardData} />;
+              return (
+                <motion.div
+                  initial={{ y: -50, opacity: 0 }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                    transition: { delay: (i % 5) * 0.1 },
+                  }}
+                >
+                  <Location key={i} locationData={cardData} />
+                </motion.div>
+              );
             }
-            return <Episode key={i} episodeData={cardData} />;
+            return (
+              <motion.div
+                initial={{ y: -50, opacity: 0 }}
+                whileInView={{
+                  y: 0,
+                  opacity: 1,
+                  transition: { delay: (i % 5) * 0.1 },
+                }}
+              >
+                <Episode key={i} episodeData={cardData} />
+              </motion.div>
+            );
           })}
       </div>
 

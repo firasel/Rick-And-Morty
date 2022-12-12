@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { motion } from "framer-motion";
 import React from "react";
 import getCharacters from "../../api/getCharacters";
 import episodeIcon from "../../assets/images/episode.svg";
@@ -39,7 +40,7 @@ const CharacterDetails = ({ id }) => {
           alt=""
         />
       )}
-  
+
       {!isLoading && !isError && (
         <div className="w-full grid md:grid-cols-2 gap-4 md:gap-0 items-center justify-center relative">
           <div className="max-w-2xl px-8 flex items-center justify-center gap-2 relative">
@@ -63,7 +64,15 @@ const CharacterDetails = ({ id }) => {
                     alt="character"
                   />
                   {/* Middle line start */}
-                  <div className="hidden md:block w-[1px] h-2/3 bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] absolute right-0"></div>
+                  <motion.div
+                    initial={{ scaleY: 0, opacity: 0 }}
+                    animate={{
+                      scaleY: 1,
+                      opacity: 1,
+                      transition: { delay: 0.1, duration: 1.5 },
+                    }}
+                    className="hidden md:block w-[1px] h-2/3 bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] absolute right-0"
+                  ></motion.div>
                   {/* Middle line end */}
                 </div>
               </div>
@@ -72,7 +81,15 @@ const CharacterDetails = ({ id }) => {
           </div>
           <div className="w-full px-2 md:px-8 space-y-4 md:space-y-6 xl:space-y-8 2xl:space-y-10 overflow-hidden">
             <div className="grid grid-cols-3 md:grid-cols-2 xl:grid-cols-3 items-center justify-between gap-4 md:gap-6 xl:gap-8 2xl:gap-10 overflow-hidden">
-              <div className="bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] rounded-lg overflow-hidden">
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                animate={{
+                  x: 0,
+                  opacity: 1,
+                  transition: { delay: 0.1 },
+                }}
+                className="bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] rounded-lg overflow-hidden"
+              >
                 <div className="w-auto text-white bg-customBlack rounded-lg px-2 py-2 md:px-6 md:py-4 overflow-x-auto">
                   <img
                     className="w-5 md:w-8 xl:w-10 aspect-square mb-1"
@@ -87,8 +104,16 @@ const CharacterDetails = ({ id }) => {
                     {status}
                   </span>
                 </div>
-              </div>
-              <div className="bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] rounded-lg overflow-hidden">
+              </motion.div>
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                animate={{
+                  x: 0,
+                  opacity: 1,
+                  transition: { delay: 0.2 },
+                }}
+                className="bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] rounded-lg overflow-hidden"
+              >
                 <div className="w-auto text-white bg-customBlack rounded-lg px-2 py-2 md:px-6 md:py-4 overflow-x-auto">
                   <img
                     className="w-5 md:w-8 xl:w-10 aspect-square mb-1"
@@ -103,8 +128,16 @@ const CharacterDetails = ({ id }) => {
                     {species}
                   </span>
                 </div>
-              </div>
-              <div className="col-auto md:col-span-2 xl:col-auto bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] rounded-lg overflow-hidden">
+              </motion.div>
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                animate={{
+                  x: 0,
+                  opacity: 1,
+                  transition: { delay: 0.3 },
+                }}
+                className="col-auto md:col-span-2 xl:col-auto bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] rounded-lg overflow-hidden"
+              >
                 <div className="w-auto text-white bg-customBlack rounded-lg px-2 py-2 md:px-6 md:py-4 overflow-x-auto">
                   <img
                     className="w-5 md:w-8 xl:w-10 aspect-square mb-1"
@@ -119,9 +152,17 @@ const CharacterDetails = ({ id }) => {
                     {gender}
                   </span>
                 </div>
-              </div>
+              </motion.div>
             </div>
-            <div className="bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] rounded-lg overflow-hidden">
+            <motion.div
+              initial={{ y: -50, opacity: 0 }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: { delay: 0.1 },
+              }}
+              className="bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] rounded-lg overflow-hidden"
+            >
               <div className="w-auto text-white bg-customBlack rounded-lg px-2 py-2 md:px-6 md:py-4 overflow-x-auto">
                 <img
                   className="w-5 md:w-8 xl:w-10 aspect-square mb-1"
@@ -141,8 +182,16 @@ const CharacterDetails = ({ id }) => {
                   </button>
                 </div>
               </div>
-            </div>
-            <div className="bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] rounded-lg overflow-hidden">
+            </motion.div>
+            <motion.div
+              initial={{ y: -50, opacity: 0 }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: { delay: 0.2 },
+              }}
+              className="bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] rounded-lg overflow-hidden"
+            >
               <div className="w-auto text-white bg-customBlack rounded-lg px-2 py-2 md:px-6 md:py-4 overflow-x-auto">
                 <img
                   className="w-5 md:w-8 xl:w-10 aspect-square mb-1"
@@ -162,8 +211,16 @@ const CharacterDetails = ({ id }) => {
                   </button>
                 </div>
               </div>
-            </div>
-            <div className="bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] rounded-lg overflow-hidden">
+            </motion.div>
+            <motion.div
+              initial={{ y: -50, opacity: 0 }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: { delay: 0.3 },
+              }}
+              className="bg-gradient-to-br from-customBlue/70 to-customGreen/70 p-[1px] rounded-lg overflow-hidden"
+            >
               <div className="w-auto text-white bg-customBlack rounded-lg px-2 py-2 md:px-6 md:py-4 overflow-x-auto">
                 <img
                   className="w-5 md:w-8 xl:w-10 aspect-square mb-1"
@@ -179,7 +236,7 @@ const CharacterDetails = ({ id }) => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       )}

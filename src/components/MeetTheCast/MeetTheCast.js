@@ -25,10 +25,29 @@ const MeetTheCast = () => {
         </Link>
       </div>
       <Carousel>
-        {isLoading && Array(6).fill(0).map((_, i) => <CharacterSkeleton homeActive={true} key={i} />)}
-        {!isLoading && !isError && data?.results?.map((characterData, i) => (
-          <Character key={i} homeActive={true} characterData={characterData} />
-        ))}
+        {/* Error message */}
+        {isError && (
+          <h2 className="font-TTTravelsDemiBold text-red-500 text-3xl text-center py-3 md:py-5 px-2 md:px-5">
+            {error?.response?.data?.error || "Something went wrong"}
+          </h2>
+        )}
+        {/* Loading card start */}
+        {isLoading &&
+          Array(6)
+            .fill(0)
+            .map((_, i) => <CharacterSkeleton homeActive={true} key={i} />)}
+        {/* Loading card end */}
+        {/* Character card start */}
+        {!isLoading &&
+          !isError &&
+          data?.results?.map((characterData, i) => (
+            <Character
+              key={i}
+              homeActive={true}
+              characterData={characterData}
+            />
+          ))}
+        {/* Character card end */}
       </Carousel>
     </div>
   );

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import bubbleImg from "../../assets/images/bubble.png";
 import gunImg from "../../assets/images/Gun.png";
@@ -19,7 +20,14 @@ const Hero = () => {
             <span className="font-TTTravelsExtraBoldItalic text-white">
               The
             </span>
-            <img
+            <motion.img
+              initial={{ y: 50, scale: 0, opacity: 0 }}
+              animate={{
+                y: 0,
+                scale: 1,
+                opacity: 1,
+                transition: { delay: 0.1 },
+              }}
               className="w-16 sm:w-32 md:w-48 lg:w-52 xl:w-auto px-2 md:px-8 pb-4 md:pb-3 xl:pb-5"
               src={portalImg}
               alt="portal"
@@ -28,12 +36,28 @@ const Hero = () => {
           </div>
           MORTY{" "}
           <span className="font-TTTravelsBoldItalic text-white">WIKI</span>
-          <img
+          <motion.img
+            initial={{ scaleX: 0, originX: 0, opacity: 0 }}
+            animate={{
+              scaleX: 1,
+              originX: 1,
+              opacity: 1,
+              transition: { delay: 0.1 },
+            }}
             className="hidden md:block absolute top-1 lg:-top-2 xl:top-4 -right-6 lg:-right-3"
             src={pillImg}
             alt="pill"
           />
-          <img
+          <motion.img
+            animate={{
+              rotate: [-3, 20, -3],
+              transition: {
+                x: 50,
+                repeat: Infinity,
+                repeatDelay: 0.1,
+                duration: 8,
+              },
+            }}
             className="w-52 md:w-auto absolute -bottom-32 md:-bottom-40 -right-28 md:-right-80 z-0"
             src={gunImg}
             alt="gun"
