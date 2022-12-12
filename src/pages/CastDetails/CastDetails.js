@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import BackgroundMinImg from "../../assets/images/Background-min.png";
-import CastDetailsBackgroundImg from "../../assets/images/CastDetailsBackground.png";
-import CastDetailsStarImg from "../../assets/images/CastDetailsStar.png";
+import backgroundMinImg from "../../assets/images/Background-min.png";
+import castDetailsBackgroundImg from "../../assets/images/CastDetailsBackground.png";
+import castDetailsStarImg from "../../assets/images/CastDetailsStar.png";
 import CharacterDetails from "../../components/CharacterDetails/CharacterDetails";
 import Navbar from "../../components/Navbar/Navbar";
 import "./CastDetails.scss";
@@ -19,17 +19,17 @@ const CastDetails = () => {
         </div>
         <img
           className="hidden md:block fixed top-[30%] px-[3%] z-0"
-          src={CastDetailsStarImg}
+          src={castDetailsStarImg}
           alt="star"
         />
         <img
           className="hidden md:block w-full h-full fixed top-0 left-0 z-0"
-          src={CastDetailsBackgroundImg}
+          src={castDetailsBackgroundImg}
           alt="background"
         />
         <img
           className="block md:hidden w-full h-full fixed top-0 left-0 z-0"
-          src={BackgroundMinImg}
+          src={backgroundMinImg}
           alt="background"
         />
       </div>

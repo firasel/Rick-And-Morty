@@ -1,6 +1,6 @@
 import React from "react";
-import BackgroundMinImg from "../../assets/images/Background-min.png";
-import BackgroundImg from "../../assets/images/Background.png";
+import backgroundMinImg from "../../assets/images/Background-min.png";
+import backgroundImg from "../../assets/images/Background.png";
 import spiralImg from "../../assets/images/Spiral.png";
 import starImg from "../../assets/images/Star.png";
 import Episodes from "../../components/Episodes/Episodes";
@@ -21,7 +21,7 @@ const Home = () => {
         </div>
         <img
           className="hidden md:block w-full h-full absolute top-0 left-0 z-0"
-          src={BackgroundImg}
+          src={backgroundImg}
           alt="background"
         />
       </div>
@@ -41,7 +41,7 @@ const Home = () => {
       </div>
       <img
         className="block md:hidden w-full h-full fixed top-0 left-0 z-0"
-        src={BackgroundMinImg}
+        src={backgroundMinImg}
         alt="background"
       />
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
-import BackgroundMinImg from "../../assets/images/Background-min.png";
-import CastBackgroundImg from "../../assets/images/CastBackground.png";
-import CastStarImg from "../../assets/images/CastStar.png";
+import backgroundMinImg from "../../assets/images/Background-min.png";
+import castBackgroundImg from "../../assets/images/CastBackground.png";
+import castStarImg from "../../assets/images/CastStar.png";
 import AllCast from "../../components/AllCast/AllCast";
 import Navbar from "../../components/Navbar/Navbar";
 import "./Cast.scss";
@@ -16,17 +16,17 @@ const Cast = () => {
         </div>
         <img
           className="hidden md:block fixed top-[30%] px-[10%] z-0"
-          src={CastStarImg}
+          src={castStarImg}
           alt="star"
         />
         <img
           className="hidden md:block w-full h-full fixed top-0 left-0 z-0"
-          src={CastBackgroundImg}
+          src={castBackgroundImg}
           alt="background"
         />
         <img
           className="block md:hidden w-full h-full fixed top-0 left-0 z-0"
-          src={BackgroundMinImg}
+          src={backgroundMinImg}
           alt="background"
         />
       </div>
