@@ -1,34 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
-import nextImg from "../../assets/images/next.png";
-
-const NextArrow = (props) => {
-  const { className, style, onClick } = props;
-  if (className?.includes("slick-disabled")) return null;
-  return (
-    <div
-      className={className}
-      style={{ ...style, width: "40px", height: "40px" }}
-      onClick={onClick}
-    >
-      <img className="w-full" src={nextImg} alt="next" />
-    </div>
-  );
-};
-
-const PrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  if (className?.includes("slick-disabled")) return null;
-  return (
-    <div
-      className={className}
-      style={{ ...style, width: "40px", height: "40px", zIndex: "20" }}
-      onClick={onClick}
-    >
-      <img className="w-full rotate-180" src={nextImg} alt="next" />
-    </div>
-  );
-};
+import NextArrow from "./NextArrow";
+import PrevArrow from "./PrevArrow";
 
 const Carousel = ({ children }) => {
   const settings = {

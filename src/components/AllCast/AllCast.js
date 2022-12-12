@@ -1,25 +1,36 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import getCharacters from "../../api/getCharacters";
+import getEpisodes from "../../api/getEpisodes";
+import getLocations from "../../api/getLocations";
 import arrow from "../../assets/images/arrow.svg";
 import arrowColored from "../../assets/images/arrowColored.svg";
 import searchImg from "../../assets/images/search.png";
 import selectArrow from "../../assets/images/selectArrow.png";
 import Character from "../Character/Character";
+import Episode from "../Episode/Episode";
 import CharacterSkeleton from "../LoadingUi/CharacterSkeleton";
+import EpisodeLocationSkeleton from "../LoadingUi/EpisodeLocationSkeleton";
+import Location from "../Location/Location";
 import "./AllCast.scss";
 
 const AllCast = () => {
   const options = ["Characters", "Location", "Episodes"];
-
+  // States
   const [page, setPage] = useState(1);
   const [select, setSelect] = useState(options[0]);
   const [selectShow, setSelectShow] = useState(false);
   const [searchText, setSearchText] = useState("");
 
+  const searchInputRef = useRef();
+
   const { data, error, isError, isLoading } = useQuery(
-    ["AllCharacters", { type: "filter", page, searchText }],
-    getCharacters
+    ["AllCharacters", { type: "filter", page, searchText }, select],
+    select === options[0]
+      ? getCharacters
+      : select === options[1]
+      ? getLocations
+      : getEpisodes
   );
 
   // Debounce function
@@ -31,11 +42,29 @@ const AllCast = () => {
     };
   };
 
-  const searchHandler = (val) => setSearchText(val);
+  const searchHandler = (val) => {
+    setPage(1);
+    setSearchText(val);
+  };
   // Debounce handler
-  const debounceHandler = useCallback(debounceFunction(searchHandler, 200), [
+  const debounceHandler = useCallback(debounceFunction(searchHandler, 250), [
     searchHandler,
   ]);
+
+  // Select handler function
+  const selectHandler = (val) => {
+    setSearchText("");
+    setPage(1);
+    setSelect(val);
+    if (
+      searchInputRef &&
+      searchInputRef?.current &&
+      searchInputRef?.current?.value
+    ) {
+      searchInputRef.current.value = "";
+    }
+    setSelectShow(false);
+  };
 
   return (
     <div className="container">
@@ -61,7 +90,7 @@ const AllCast = () => {
                 {options?.map((name, i) => (
                   <div
                     key={i}
-                    onClick={() => setSelect(name)}
+                    onClick={() => selectHandler(name)}
                     className="px-5 cursor-pointer hover:bg-customBlack/10"
                   >
                     {i > 0 && <hr />}
@@ -83,6 +112,7 @@ const AllCast = () => {
                 className="w-full xl:max-w-xs px-1 py-[6px] md:py-2 text-TTTravelsDemiBold text-base md:text-xl bg-white/5 text-white rounded-r-full outline-none"
                 type="text"
                 placeholder="Search"
+                ref={searchInputRef}
                 onChange={(e) => debounceHandler(e?.target?.value)}
               />
             </div>
@@ -99,15 +129,28 @@ const AllCast = () => {
       )}
 
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-9 xl:gap-10 py-10">
+        {/* Loading card */}
         {isLoading &&
           Array(10)
             .fill(0)
-            .map((_, i) => <CharacterSkeleton key={i} />)}
+            .map((_, i) => {
+              if (select === options[0]) {
+                return <CharacterSkeleton key={i} />;
+              }
+              return <EpisodeLocationSkeleton key={i} />;
+            })}
+        {/* Cast card */}
         {!isLoading &&
           !isError &&
-          data?.results?.map((characterData, i) => (
-            <Character key={i} characterData={characterData} />
-          ))}
+          data?.results?.map((cardData, i) => {
+            if (select === options[0]) {
+              return <Character key={i} characterData={cardData} />;
+            }
+            if (select === options[1]) {
+              return <Location key={i} locationData={cardData} />;
+            }
+            return <Episode key={i} episodeData={cardData} />;
+          })}
       </div>
 
       {/* Pagination start */}

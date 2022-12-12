@@ -5,6 +5,9 @@ const getEpisodes = async (params) => {
   let url = "/episode/";
 
   if (queryKey?.length > 1) {
+    if (queryKey[1]?.type === "filter") {
+      url += `?page=${queryKey[1]?.page}&name=${queryKey[1]?.searchText?.trim()}`;
+    }
     if (queryKey[1]?.type === "singleEpisode") {
       url += queryKey[1]?.id;
     }

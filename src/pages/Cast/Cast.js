@@ -19,6 +19,7 @@ const Cast = () => {
           src={castStarImg}
           alt="star"
         />
+        {/* Background image start */}
         <img
           className="hidden md:block w-full h-full fixed top-0 left-0 z-0"
           src={castBackgroundImg}
@@ -29,6 +30,7 @@ const Cast = () => {
           src={backgroundMinImg}
           alt="background"
         />
+        {/* Background image end */}
       </div>
     </div>
   );

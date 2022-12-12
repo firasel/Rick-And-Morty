@@ -19,6 +19,7 @@ const Home = () => {
           <Hero />
           <MeetTheCast />
         </div>
+        {/* Background image */}
         <img
           className="hidden md:block w-full h-full absolute top-0 left-0 z-0"
           src={backgroundImg}
@@ -39,6 +40,7 @@ const Home = () => {
           <img className="absolute top-[10%] z-0" src={starImg} alt="star" />
         </div>
       </div>
+      {/* Background image form small device */}
       <img
         className="block md:hidden w-full h-full fixed top-0 left-0 z-0"
         src={backgroundMinImg}

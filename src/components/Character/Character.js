@@ -11,8 +11,8 @@ const Character = ({ characterData, homeActive }) => {
         <div className="characterCardChild w-full h-full p-2 md:p-4 bg-customBlack rounded-lg">
           <img
             className={`${
-              homeActive ? "w-32" : "w-full"
-            } md:w-full aspect-square rounded mb-3 md:mb-6`}
+              homeActive ? "w-32 md:min-w-max" : "w-full"
+            } aspect-square rounded mb-3 md:mb-6`}
             src={image}
             alt="character"
           />
